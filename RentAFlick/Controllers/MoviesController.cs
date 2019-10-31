@@ -17,7 +17,7 @@ namespace RentAFlick.Controllers
             var customers = new List<Customer>
             {
                 new Customer { Name = "Shrek" },
-                new Customer { Name = "Fiona" }
+                new Customer { Name = "Fiona" } 
             };
 
             var viewModel = new RandomMovieViewModel
