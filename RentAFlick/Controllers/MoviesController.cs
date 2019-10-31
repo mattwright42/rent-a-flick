@@ -11,6 +11,24 @@ namespace RentAFlick.Controllers
     public class MoviesController : Controller
     {
         // GET: Movies/Random
+
+        public ViewResult Index()
+        {
+            var movies = GetMovies();
+
+            return View(movies);
+        }
+
+        private IEnumerable<Movie> GetMovies()
+        {
+            return new List<Movie>
+            {
+                new Movie {Id = 1, Name = "The Fellowship of the Ring" },
+                new Movie {Id = 2, Name = "The Two Towers" },
+                new Movie {Id = 1, Name = "The Return of the King" }
+            };
+        }
+
         public ActionResult Random()
         {
             var movie = new Movie() { Name = "Shrek" };
