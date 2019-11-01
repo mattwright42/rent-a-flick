@@ -202,10 +202,24 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910312304471_InitialModel.cs" />
+    <Compile Include="Migrations\201910312304471_InitialModel.Designer.cs">
+      <DependentUpon>201910312304471_InitialModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910312336222_AddMembershipType.cs" />
+    <Compile Include="Migrations\201910312336222_AddMembershipType.Designer.cs">
+      <DependentUpon>201910312336222_AddMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911011825595_UpdateMembershipTypeDiscountRate.cs" />
+    <Compile Include="Migrations\201911011825595_UpdateMembershipTypeDiscountRate.Designer.cs">
+      <DependentUpon>201911011825595_UpdateMembershipTypeDiscountRate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -292,6 +306,17 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201910312304471_InitialModel.resx">
+      <DependentUpon>201910312304471_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910312336222_AddMembershipType.resx">
+      <DependentUpon>201910312336222_AddMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911011825595_UpdateMembershipTypeDiscountRate.resx">
+      <DependentUpon>201911011825595_UpdateMembershipTypeDiscountRate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
