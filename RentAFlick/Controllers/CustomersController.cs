@@ -26,9 +26,12 @@ namespace RentAFlick.Controllers
         public ActionResult New()
         {
             var membershipTypes = _context.MembershipTypes.ToList();
-            var viewModel = new CustomerFormViewModel {
-            MembershipTypes = membershipTypes};
-            return View("CustomerForm", viewModel);
+            var viewModel = new CustomerFormViewModel
+            {
+                Customer = new Customer(),
+                MembershipTypes = membershipTypes
+            };
+                return View("CustomerForm", viewModel);
         }
 
         [HttpPost]
