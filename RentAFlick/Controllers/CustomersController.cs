@@ -49,7 +49,7 @@ namespace RentAFlick.Controllers
                 // TryUpdateModel(customerInDb, "", new string[] {"Name", "Email" });
             }
 
-            _context.Customers.Add(customer);
+            //_context.Customers.Add(customer);
             _context.SaveChanges();
 
             return RedirectToAction("Index", "Customers");
