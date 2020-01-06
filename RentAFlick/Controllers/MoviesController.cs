@@ -50,9 +50,8 @@ namespace RentAFlick.Controllers
             if (movie == null)
                 return HttpNotFound();
 
-            var viewModel = new MovieFormViewModel
+            var viewModel = new MovieFormViewModel(movie)
             {
-                Movie = movie,
                 Genres = _context.Genres.ToList()
             };
             return View("MovieForm", viewModel);
@@ -72,15 +71,7 @@ namespace RentAFlick.Controllers
             return View(movie);
         }
 
-        //private IEnumerable<Movie> GetMovies()
-        //{
-        //    return new List<Movie>
-        //    {
-        //        new Movie {Id = 1, Name = "The Fellowship of the Ring" },
-        //        new Movie {Id = 2, Name = "The Two Towers" },
-        //        new Movie {Id = 1, Name = "The Return of the King" }
-        //    };
-        //}
+       
 
         public ActionResult Random()
         {
@@ -107,8 +98,18 @@ namespace RentAFlick.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Movie movie)
         {
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new MovieFormViewModel(movie)
+                {
+                    Genres = _context.Genres.ToList()
+                };
+                return View("MovieForm", viewModel);
+            }
+
             if (movie.Id == 0)
             {
                 movie.DateAdded = DateTime.Now;
@@ -130,27 +131,6 @@ namespace RentAFlick.Controllers
 
         
 
-        //public ActionResult Edit(int id)
-        //{
-        //    return Content("id=" + id);
-        //}
-
-        //public ActionResult Index(int? pageIndex, string sortBy)
-        //{
-        //    if (pageIndex.HasValue)
-        //        pageIndex = 1;
-
-        //    if (String.IsNullOrWhiteSpace(sortBy))
-        //    {
-        //        sortBy = "Name";
-        //    }
-        //    return Content(String.Format("pageIndex={0}&sortBy={1}", pageIndex, sortBy));
-        //}
-
-        //[Route("movies/released/{year:regex(\\d{4})}/{month:regex(\\d{2}):range(1, 12)}")]
-        //public ActionResult ByReleaseDate(int year, int month)
-        //{
-        //    return Content(year + "/" + month);
-        //}
+        
     }
 }
