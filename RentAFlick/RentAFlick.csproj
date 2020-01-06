@@ -246,6 +246,10 @@
     <Compile Include="Migrations\201911052329238_PopulateMovies.Designer.cs">
       <DependentUpon>201911052329238_PopulateMovies.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001062120293_UpdateCodeForValidations.cs" />
+    <Compile Include="Migrations\202001062120293_UpdateCodeForValidations.Designer.cs">
+      <DependentUpon>202001062120293_UpdateCodeForValidations.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -379,6 +383,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911052329238_PopulateMovies.resx">
       <DependentUpon>201911052329238_PopulateMovies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001062120293_UpdateCodeForValidations.resx">
+      <DependentUpon>202001062120293_UpdateCodeForValidations.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
