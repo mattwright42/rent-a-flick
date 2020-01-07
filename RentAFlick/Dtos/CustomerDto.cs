@@ -19,6 +19,8 @@ namespace RentAFlick.Dtos
 
         //byte = implicitly required
         public byte MembershipTypeId { get; set; }
+
+        public MembershipTypeDto MembershipType { get; set; }
         
         //[Min18YearsIfAMember]
         public DateTime? Birthdate { get; set; }
