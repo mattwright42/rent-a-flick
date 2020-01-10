@@ -65,6 +65,10 @@ namespace RentAFlick.Models
     public class RegisterViewModel
     {
         [Required]
+        [Display(Name = "Driver's License")]
+        public string DrivingLicense { get; set; }
+
+        [Required]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
