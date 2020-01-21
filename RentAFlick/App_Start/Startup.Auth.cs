@@ -55,7 +55,7 @@ namespace RentAFlick
             //   consumerSecret: "");
 
             app.UseFacebookAuthentication(
-               appId: "576751329838727",
+               appId: "",
                appSecret: "");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
